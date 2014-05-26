@@ -14,3 +14,35 @@
     }
   }
 }
+
+.debug_dump {
+  margin-top: 40px;
+}
+
+
+#profile-sidebar {
+  text-align: center;
+  padding: 20px 10px;
+
+  section {
+    h2 {
+      font-size: 1.3em;
+    }
+  }
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+#error-messages {
+  ul {
+    color: #c00;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+}
