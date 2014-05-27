@@ -31,8 +31,8 @@ describe "Authentication Pages" do
       let(:user) { FactoryGirl.create(:user) }
 
       before do
-        fill_in "session_email",      with: user.email.upcase
-        fill_in "session_password",   with: user.password
+        fill_in "email",      with: user.email.upcase
+        fill_in "password",   with: user.password
         click_button "SIGN IN"
       end
 
