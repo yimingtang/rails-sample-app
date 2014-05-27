@@ -18,23 +18,19 @@ describe "Authentication Pages" do
       before { click_button "SIGN IN" }
 
       it { should have_title(full_title('Sign In')) }
-      it { should have_selector("div.alert.alert-danger") }
+      it { should have_error_message('Invalid') }
 
       describe "after visiting another page" do
         before { click_link "Home" }
 
-        it { should_not have_selector('div.alert.alert-danger') }
+        it { should_not have_error_message }
       end
     end
 
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
 
-      before do
-        fill_in "email",      with: user.email.upcase
-        fill_in "password",   with: user.password
-        click_button "SIGN IN"
-      end
+      before { valid_signin user }
 
       it { should have_title(user.name) }
       it { should have_link('Profile', href: user_path(user)) }
