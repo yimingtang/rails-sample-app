@@ -30,10 +30,21 @@
   }
 }
 
+$avatar-width-default: 60px;
+$avatar-height-default: 60px;
+$avatar-width-large: 80px;
+$avatar-height-large: 80px;
+
 .avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+  width: $avatar-width-default;
+  height: $avatar-height-default;
+  border-radius: $avatar-width-default / 2;
+}
+
+.avatar-large {
+  width: $avatar-width-large;
+  height: $avatar-height-large;
+  border-radius: $avatar-width-large / 2;
 }
 
 #error-messages {
@@ -55,5 +66,12 @@
   text-align: center;
   margin-top: 24px;
   font-size: 1.2em;
+}
+
+.list-group-item {
+  .user-info {
+    margin-left: $avatar-width-default + 10px;
+    font-size: 1.2em;
+  }
 }
 

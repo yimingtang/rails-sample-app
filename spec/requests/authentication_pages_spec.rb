@@ -37,6 +37,7 @@ describe "Authentication Pages" do
       end
 
       it { should have_title(user.name) }
+      it { should have_link('Users', href: users_path) }
       it { should have_link('Profile', href: user_path(user)) }
       it { should have_link('Settings', href: edit_user_path(user)) }
       it { should have_link('Sign Out', href: signout_path) }
@@ -81,6 +82,12 @@ describe "Authentication Pages" do
           before { patch user_path(user) }
 
           specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "visiting the user index" do
+          before { visit users_path }
+
+          it { should have_title('Sign In') }
         end
       end
     end
