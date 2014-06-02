@@ -37,6 +37,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spork-rails'
   gem 'guard-spork'
+  gem 'faker'
 end
 
 group :development do
