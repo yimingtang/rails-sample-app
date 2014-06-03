@@ -2,6 +2,11 @@
   <%= gravatar_for user, class: "avatar pull-left" %>
   <div class="user-info">
     <%= link_to user.name, user %>
+    <% if current_user.admin? && !current_user?(user) %>
+      <%= link_to "delete", user, method: :delete,
+                                   class: 'btn btn-danger pull-right',
+                                    data: { confirm: "You sure?" } %>
+    <% end %>
   </div>
   <div class="clearfix"></div>
 </li>

@@ -72,6 +72,9 @@ $avatar-height-large: 80px;
   .user-info {
     margin-left: $avatar-width-default + 10px;
     font-size: 1.2em;
+    .btn {
+      margin-top: 13px;
+    }
   }
 }
 
