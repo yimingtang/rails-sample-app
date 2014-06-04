@@ -37,7 +37,7 @@ describe "User Pages" do
 
         before do
           # Since signed in user can't access sign in page, sign out first
-          click_link ('Sign Out')
+          click_link('Sign Out')
           sign_in admin
           visit users_path
         end
@@ -49,6 +49,17 @@ describe "User Pages" do
           expect do
             click_link('delete', match: :first)
           end.to change(User, :count).by(-1)
+        end
+
+        describe "attempting delete himself" do
+          before do
+            click_link ('Sign Out')
+            sign_in admin, no_capybara: true
+          end
+
+          specify do
+            expect { delete user_path(admin) }.not_to change(User, :count)
+          end
         end
       end
     end
