@@ -71,6 +71,17 @@ describe "Authentication Pages" do
             it { should have_title('Edit User') }
           end
         end
+
+        describe "when signing in again" do
+          before do
+            click_link "Sign Out"
+            sign_in user
+          end
+
+          it "should render the default (profile) page" do
+            expect(page).to have_title(user.name)
+          end
+        end
       end
 
       describe "in the users controller" do
