@@ -9,6 +9,8 @@ describe "Authentication Pages" do
 
     it { should have_content('Sign In') }
     it { should have_title(full_title('Sign In')) }
+    it { should_not have_link('Profile') }
+    it { should_not have_link('Settings') }
   end
 
   describe "signin" do
