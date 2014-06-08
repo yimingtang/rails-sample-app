@@ -9,4 +9,14 @@
       </header>
     </section>
   </aside>
+
+  <section class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ul class="list-group">
+        <%= render @microposts %>
+      </ul>
+      <%= paginate @microposts %>
+    <% end %>
+  </section>
 </div>

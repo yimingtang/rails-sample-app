@@ -1,0 +1,9 @@
+<li class="list-group-item micropost-item">
+  <div class="micropost-item-header">
+    <%= link_to micropost.user.name, micropost.user %>
+    <span class="timestamp">
+      <%= time_ago_in_words(micropost.created_at) %> ago.
+    </span>
+  </div>
+  <p><%= micropost.content %></p>
+</li>
