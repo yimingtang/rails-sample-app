@@ -1,0 +1,9 @@
+<header>
+  <%= gravatar_for current_user, class: "avatar-large" %>
+  <h2><%= link_to current_user.name, current_user %></h2>
+</header>
+<div class="profile-stats">
+  <span>
+    <%= link_to pluralize(current_user.microposts.count, "micropost"), current_user %>
+  </span>
+</div>
